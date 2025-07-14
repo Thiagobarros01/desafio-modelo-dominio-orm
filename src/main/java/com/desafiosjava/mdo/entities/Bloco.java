@@ -3,6 +3,7 @@ package com.desafiosjava.mdo.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tb_bloco")
@@ -12,9 +13,9 @@ public class Bloco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDate inicio;
+    private LocalDateTime inicio;
 
-    private LocalDate fim;
+    private LocalDateTime fim;
 
     @ManyToOne
     @JoinColumn(name = "atividade_id")
@@ -28,19 +29,19 @@ public class Bloco {
         this.id = id;
     }
 
-    public LocalDate getInicio() {
+    public LocalDateTime getInicio() {
         return inicio;
     }
 
-    public void setInicio(LocalDate inicio) {
+    public void setInicio(LocalDateTime inicio) {
         this.inicio = inicio;
     }
 
-    public LocalDate getFim() {
+    public LocalDateTime getFim() {
         return fim;
     }
 
-    public void setFim(LocalDate fim) {
+    public void setFim(LocalDateTime fim) {
         this.fim = fim;
     }
 
